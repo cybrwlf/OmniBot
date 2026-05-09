@@ -10,6 +10,15 @@ RUN npm run build
 # Match CI: openwakeword requires tflite-runtime on Linux, which has no cp312 wheels on PyPI.
 FROM python:3.11-slim-bookworm
 
+# add build-essential and gcc
+RUN apt-get update && apt-get install -y \
+        build-essential \
+        gcc \
+        python3-dev \
+        portaudio19-dev \
+        ffmpeg \
+        && rm -rf /var/lib/apt/lists/*
+        
 # OpenCV headless and common native deps for wheels
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libglib2.0-0 \
