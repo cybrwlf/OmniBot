@@ -30,3 +30,6 @@ services:
       timeout: 10s
       retries: 5
       start_period: 120s
+
+volumes:
+  omnibot_data:
