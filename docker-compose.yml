@@ -16,6 +16,8 @@ services:
       # OMNIBOT_SETUP_SIMULATE_DEVICE: "1"
     volumes:
       - omnibot_data:/data
+      - ./app/backend/persona_defaults:/app/backend/persona_defaults
+      - ./app/backend/static:/app/backend/static
     healthcheck:
       test:
         [
@@ -28,7 +30,3 @@ services:
       timeout: 10s
       retries: 5
       start_period: 120s
-
-volumes:
-      - omnibot_data:/data
-      - ./app/backend:/app/backend  # <--- ADD THIS LINE
