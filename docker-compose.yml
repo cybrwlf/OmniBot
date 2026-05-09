@@ -30,4 +30,5 @@ services:
       start_period: 120s
 
 volumes:
-  omnibot_data:
+      - omnibot_data:/data
+      - ./app/backend:/app/backend  # <--- ADD THIS LINE
