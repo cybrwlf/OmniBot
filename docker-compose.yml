@@ -2,6 +2,7 @@ services:
   omnibot:
     build:
       context: .
+      env_file: .env
       dockerfile: Dockerfile
     ports:
       - "8080:8000"
